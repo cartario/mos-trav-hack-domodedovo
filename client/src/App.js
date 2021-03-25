@@ -1,7 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
 function App() {
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(()=>{
+    const fetchData = async ()=>{
+      const response = await fetch('/api/domodedovo/hello');
+      const resData = await response.json();
+      setData(resData)
+    }
+
+    fetchData();
+  }, []);
+
+  if(!data){
+    return (<p>Loading...</p>)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
