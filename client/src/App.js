@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import Stepper from '../src/components/stepper'
+import Stepper from '../src/components/stepper';
 
 function App() {
   const [data, setData] = React.useState(null);
